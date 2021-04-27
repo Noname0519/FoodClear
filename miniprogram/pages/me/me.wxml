@@ -1,0 +1,88 @@
+<!--pages/mycenter/mycenter.wxml-->
+<!-- 授权弹窗整体 -->
+<!-- <view class="dialog" hidden="{{!show}}"> -->
+<!-- mask -->
+<!-- <view class="mask" wx:if="{{show}}" bindtap="closeMaskerLayer" catchtouchmove="maskTouchMove"></view> -->
+<!-- 授权弹窗 -->
+<!-- <view class="content-container" wx:if="{{show}}" catchtouchmove='touchMove'>
+		<view class="title_box">
+			<view class="title_text_box">
+				授权 申请
+			</view>
+		</view>
+
+		 <view class="content_box">
+			<text class="content_text">
+      获取您的昵称、头像、地区及性别
+      </text>
+		</view>
+    <view class="button_box">
+		  <button class="config_button" open-type="openSetting" lang="zh_CN">授权设置</button>
+		  <button class="get_button" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">允许</button>
+	  </view> 
+	</view>
+</view> -->
+
+<view class='amountBg'>
+	<view class='img'>
+		<!-- 头像 -->
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<view class='account'>
+		<view class='nick-name'>
+			<open-data type="userNickName" lang="zh_CN"></open-data>
+		</view>
+		<view class='address'>
+			<open-data type="userCountry" lang="zh_CN"></open-data>·
+			<open-data type="userProvince" lang="zh_CN"></open-data>·
+			<open-data type="userCity" lang="zh_CN"></open-data>
+		</view>
+
+
+	</view>
+</view>
+
+<!-- 底部列表 -->
+<view class='content'>
+	<!-- 收藏列表 -->
+	<!-- <view class='line'></view>
+	<view class='item' bindtap='onCollectClick'>
+		<view class='icon'>
+			<image src='../../images/me/collect.png' style="width:22px;height:21px;"></image>
+		</view>
+		<view class='itemName'>
+			<view>收藏列表</view>
+		</view>
+		<view class='right'>></view>
+	</view> -->
+
+	<!-- 发布历史 -->
+	<!-- <view class='hr'></view>
+	<view class='item' bindtap='onHistoryClick'>
+		<view class='icon'>
+			<image src='../../images/me/history.png' style="width:22px;height:21px;"></image>
+		</view>
+		<view class='itemName'>
+			<view>发布历史</view>
+		</view>
+		<view class='right'>></view>
+	</view> -->
+
+	<!-- 邀请好友 -->
+	<view class='line'></view>
+	<view class='item'>
+		<view class='icon'>
+			<image src='../../images/me/invitation.png' style="width:22px;height:21px;"></image>
+		</view>
+		<view class='itemName'>
+			<view>一起参与光盘行动吧</view>
+		</view>
+		<view class='right'>
+			<text class='opr'>点击右上角即可分享</text>></view>
+	</view>
+	<view class='hr'></view>
+	<view>
+		<image class="img1" src="../../images/1.png"></image>
+		<image class="img2" src="../../images/2.png"></image>
+	</view>
+</view>

@@ -1,0 +1,66 @@
+<!--miniprogram/pages/homeDetail/homeDetail.wxml-->
+<view class='container' bindtap='onItemClick'>
+	<view class='container-content'>
+		<view class='user-info'>
+			<image class='user-head' src='{{topic.user.avatarUrl}}' mode='aspectFill'></image>
+			<view class='user-name-time'>
+				<view class='user-name'>{{topic.user.nickName}}</view>
+				<view class='user-publish-time'>{{topic.date}}</view>
+			</view>
+		</view>
+		<view class='content'>
+			<!-- 显示文本 -->
+			<view wx:if="{{topic.content != ''}} && {{topic.images.length > 0}}">
+				<text class='content-text'>{{topic.content}}</text>
+				<block wx:for="{{topic.images}}" wx:for-index="idx">
+					<image class='content-img' src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'></image>
+				</block>
+			</view>
+			<!-- 显示图片 -->
+			<view wx:elif="{{topic.images.length > 0}}">
+				<block wx:for="{{topic.images}}" wx:for-index="idx">
+					<image class='content-img' src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'></image>
+				</block>
+			</view>
+			<!-- 显示文本 -->
+			<block wx:else>
+				<text class='content-text'>{{topic.content}}</text>
+			</block>
+		</view>
+	</view>
+	<view style="text-align:center;font-size:14px;color:#ccc;margin-top:20px;">以下是留言内容</view>
+	<view wx:if="{{replays.length > 0}}" class="liuyanview" wx:for="{{replays}}" wx:key="replays">
+		<view class="headimg">
+			<image src="{{item.user.avatarUrl}}"></image>
+		</view>
+		<view class="nickname_liuyantext">
+			<view class="nickname">
+				{{item.user.nickName}}
+				<view class="time">{{item.date}}
+				</view>
+			</view>
+			<view class="text">{{item.content}}</view>
+		</view>
+		<!-- </view> -->
+		<!-- 占位符 -->
+		<view style="width:100%;height:10px"></view>
+	</view>
+	<view class='placeholder-view'></view>
+
+	<view class="like-container" data-id="{{id}}">
+		<button class='btn-class' bindtap='onReplayClick'>回复</button>
+		<!-- <button data-id="{{id}}" wx:if='{{vote>0 && vote != null}}' class="interact-btn" width="20px" catchtap="onLikeClick" style="color:{{isLike ? '#55aaff' : '#000'}}">赞 {{vote}}</button> -->
+		<!-- <button wx:else class="interact-btn" width="20px" catchtap="onLikeClick" style="color:{{isLike ? '#55aaff' : '#000'}}">赞</button> -->
+		<!-- <button bindtap="onLikeClick" >
+			<image class="like-icon" src="../../images/zan1.png">{{vote}}
+			</image>
+		</button> -->
+		<!-- <button class="text-btn">{{vote}}</button> -->
+		<button class="zan" bindtap="onLikeClick" style="background-image:url({{imgUrl}})" plain="true">{{vote}}</button>
+		<!-- <view>{{vote}}</view> -->
+		<!-- <text class="voteNum"></text> -->
+		
+    <!-- <image class='like-icon' src='../../images/topic-detail/unlike.png' bindtap='onLikeClick'></image> -->
+	</view>
+
+</view>

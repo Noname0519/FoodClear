@@ -1,0 +1,50 @@
+<!--miniprogram/pages/publish/publish.wxml-->
+<!-- <text>miniprogram/pages/publish/publish.wxml</text>
+<textarea class="desc" placeholder="请输入内容" bindinput="getInput" />
+<view class="iamgeRootAll">sh
+  <block wx:for="{{imgList}}" wx:key="index">
+    <view class="imgItem">
+      <image class="img" src='{{item}}' mode='aspectFill'></image>
+      <image class="closeImg" bindtap="DeleteImg" src="../../images/close.png" data-index="{{index}}"></image>
+    </view>
+  </block>
+ 选择图片按钮 -->
+<!-- <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
+    <image class="photo" src="../../images/photo.png"></image>
+  </view>
+</view> -->
+
+<!-- <button type="primary" bindtap="publish">发布朋友圈</button> -->
+<view class="content">
+	<form bindsubmit="formSubmit">
+		<view class="text-content">
+			<view class='text-area'>
+				<textarea name="input-content" type="text" placeholder="说点什么吧~" placeholder-class="holder" value="{{textContent}}" bindblur='getTextAreaContent'></textarea>
+			</view>
+		</view>
+
+		<view class="iamgeRootAll">
+			<block wx:for="{{images}}" wx:key="index">
+				<view class="imgItem">
+					<image class="img" src='{{item}}' mode='aspectFill' bindtap="previewImg"></image>
+					<image class="closeImg" bindtap="DeleteImg" src="../../images/close.png" data-index="{{index}}"></image>
+				</view>
+			</block>
+			<!-- 选择图片按钮 -->
+			<view wx:if="{{images.length<8}}" class="imgItem" bindtap="chooseImage">
+      <!-- 添加按钮 -->
+				<image class="photo" src="../../images/photo.png"></image>
+			</view>
+		</view>
+		<view class='btn-func'>
+			<!-- <button class="btn-img" bindtap='chooseImage'>选择图片</button> -->
+			<button class="btn" formType='submit' open-type="getUserInfo">发布</button>
+			<!-- <image hidden=''></image> -->
+		</view>
+			<view>
+		<image class="img1" src="../../images/1.png"></image>
+		<image class="img2" src="../../images/2.png"></image>
+	</view>
+	</form>
+
+</view>

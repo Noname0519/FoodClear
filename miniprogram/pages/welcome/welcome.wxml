@@ -1,0 +1,5 @@
+<!--miniprogram/pages/welcome/welcome.wxml-->
+<text>miniprogram/pages/welcome/welcome.wxml</text>
+<view class="container">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">进入分享圈</button>
+</view>

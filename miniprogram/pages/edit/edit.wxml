@@ -1,0 +1,17 @@
+<!--miniprogram/pages/upload.wxml-->
+<view class='flexDownC'>
+  <view class='flexDownC w100'> 
+    <textarea class='input' bindinput='textInput' placeholder-style='margin-left:20rpx;' maxlength='500' 
+    placeholder='分享，速' value='{{text}}' auto-focus auto-height>
+    </textarea>
+  </view>
+
+  <view class='btm flexSpaceBet w100 publishItem'>
+    <image src='../../images/pic.png' class='pic' bindtap='doUpload'></image>
+    <view class='pulishBtn' bindtap='pulish'> 发布</view>
+  </view>
+  <view class='flexCenter w100' wx:if='{{imgUrl}}'>
+      <image src='{{imgUrl}}' class='w100'  mode="aspectFit" ></image>
+  </view>
+
+</view>
